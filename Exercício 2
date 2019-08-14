@@ -1,0 +1,101 @@
+#include<stdio.h>
+//Questão 1//
+
+void main(){
+int n, m=0, f=0, i;
+float h, hmm=0, hmf=0, H=0, hm=0, tp=0;
+char sexo;
+printf("Insira a quantidade de pessoas:\n")
+scanf("%d", &n);
+
+
+
+for(i=0; i<n; i++){
+        printf("insira o sexo ('m' ou 'M' = masculino) e ('f' ou 'F' = feminino)\n")
+        scanf(" %c", &sexo);
+        printf("insira a altura:(ex = 1.93)\n")
+        scanf("%f", &h);
+          hm+=h;
+    if(h>H){
+        H=h;
+    }
+
+   if(sexo=='m' || sexo=='M'){
+    m++;
+    hmm+=h;
+   }
+    else if(sexo=='f' || sexo=='F'){
+    f++;
+    hmf+=h;
+   }
+
+}
+tp = (float)m + (float)f;
+hm= hm / tp;
+hmf= hmf / f;
+hmm= hmm / m;
+printf("altura média das %f pessoas = %.2f\n", tp,  hm);
+printf("maior altura = %.2f\n", H);
+printf("altura média das mulheres = %.2f\naltura média dos homens = %.2f\n", hmf, hmm);
+printf("quantidade de homens = %d", m);
+
+
+
+
+}
+#########################################################################################
+#include<stdio.h>
+//Questão 2//
+
+void main(){
+int i, j, x, y,  v[100],p=0,imp=0,soma=0;
+float md;
+
+for(i=0; i<100; i++){
+    printf("insira um valor:(menor que 256)");
+    scanf("%d", &y);
+    if(y<256){
+    v[i]=y;
+    if(y%2==0){
+        p++;
+    }
+    else{
+        imp++;
+        if(y>50){
+            soma+=y;
+        }
+    }
+
+}
+}
+for(i=0; i<100; i++){
+for(j=i+1;j<100;j++){
+        if(v[i]>v[j]){
+          x=v[i];
+          v[i]=v[j];
+          v[j]= x;
+        }
+
+}
+
+
+
+}
+
+
+for(i=0; i<100; i++){
+
+    printf("v[%d]=%d\n",i,v[i]);
+}
+
+md=(float)soma/(float)imp;
+
+printf("pares=%d\n", p);
+printf("ímpares=%d\n",imp);
+printf("média=%d\n", md);
+
+
+
+
+
+}
