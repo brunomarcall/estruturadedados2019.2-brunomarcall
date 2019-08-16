@@ -1,5 +1,5 @@
 #include<stdio.h>
-//Questão 1//
+                //-------------------------------------Questão 1------------------------------------------------//
 
 void main(){
 int n, m=0, f=0, i;
@@ -45,13 +45,16 @@ printf("quantidade de homens = %d", m);
 }
 #########################################################################################
 #include<stdio.h>
-//Questão 2//
+
+                //-------------------------------------Questão 2------------------------------------------------//
 
 void main(){
-int i, j, x, y,  v[100],p=0,imp=0,soma=0;
+int i, j, x, y,  v[100],p=0,imp=0,soma=0,impar50=0, n;
 float md;
+printf("indique a quantidade de valores:(N<=100)");
+scanf("%d", &n);
 
-for(i=0; i<100; i++){
+for(i=0; i<n; i++){
     printf("insira um valor:(menor que 256)");
     scanf("%d", &y);
     if(y<256){
@@ -62,14 +65,15 @@ for(i=0; i<100; i++){
     else{
         imp++;
         if(y>50){
+            impar50++;
             soma+=y;
         }
     }
 
 }
 }
-for(i=0; i<100; i++){
-for(j=i+1;j<100;j++){
+for(i=0; i<n; i++){
+for(j=i+1;j<n;j++){
         if(v[i]>v[j]){
           x=v[i];
           v[i]=v[j];
@@ -83,16 +87,16 @@ for(j=i+1;j<100;j++){
 }
 
 
-for(i=0; i<100; i++){
+for(i=0; i<n; i++){
 
     printf("v[%d]=%d\n",i,v[i]);
 }
 
-md=(float)soma/(float)imp;
+md=(float)soma/(float)impar50;
 
 printf("pares=%d\n", p);
-printf("ímpares=%d\n",imp);
-printf("média=%d\n", md);
+printf("impares=%d\n",imp);
+printf("media=%.2f\n", md);
 
 
 
