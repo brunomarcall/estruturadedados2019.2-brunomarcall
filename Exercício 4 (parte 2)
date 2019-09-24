@@ -1,0 +1,30 @@
+/* a função recursiva retorna a soma do valor inicial, sempre com o decremento em uma unidade, até zero. 
+Ex: valor inicial = 4: resultado = 4 + 3 + 2 + 1 -> 10 */
+
+
+int conta(int n){
+int k, soma=0;
+
+if (n == 0){
+  return 0;
+}
+
+
+else{
+for(k=n;k>0;k--){
+soma+=k;
+}
+
+
+printf("%d", soma);
+}
+return 0;
+}
+
+int main(){
+conta(3);//valor passado por referência
+
+
+
+
+}
