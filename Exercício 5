@@ -1,0 +1,30 @@
+#include<stdio.h>
+int busca_binaria(int vetor[],int comeco,int fim,int busca){
+ while(comeco<=fim)
+ {
+  int meio;
+  meio=(comeco+fim)/2;//encontra o valor que representa a posição na metade do array
+  if(vetor[meio]==busca)//verifica se o valor procurado foi encontrado 
+  {
+   return meio;//retorna o valor procurado 
+  }
+  else if (vetor[meio]<busca)//comapara a posição do meio com o valor buscado
+  {
+   return busca_binaria(vetor,meio+1,fim,busca);//retorna a chamada da função com o acréscimo de um da posição metade 
+  }
+  else
+  {
+   return busca_binaria(vetor,comeco,meio-1,busca);//retorna a chamada da função com o decréscimo de um da posição metade
+  }
+ }
+ return -1;
+}
+int main (){
+ int v[10]={0,1,2,3,4,5,6,7,8,9};
+ int x, valor;
+ printf("Insira o valor para a busca binaria: ");
+ scanf("%d",&x);
+ valor=busca_binaria(v,0,9,x);
+ printf("Valor encontrado : %d\n",valor);
+ return 0;
+}
