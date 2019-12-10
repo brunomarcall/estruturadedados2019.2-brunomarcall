@@ -1,0 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#define TAM 16
+
+void imprimeVetor(int numeros[]){
+
+    for(int i = 0; i < TAM; i++){
+         printf("|%d| ", numeros[i]);
+    }
+    printf("\n");
+}
+
+
+
+int main()
+{
+ setlocale(LC_ALL, "");
+ int numeros[TAM];
+ int i, aux, contador;
+printf("Entre com os elementos para preencher o array:\n");
+ for (i = 0; i < TAM; i++) {
+ scanf("%d", &numeros[i]);
+ }
+printf("Vetores em ordem decrescente:\n");
+for (i = 0; i < TAM; i++) {
+ printf("%d\n", numeros[i]);
+}
+ for (contador = 1; contador < TAM; contador++) {
+   for (i = 0; i < TAM - 1; i++) {
+     imprimeVetor(numeros);
+     if (numeros[i] < numeros[i + 1]) {
+       aux = numeros[i];
+       numeros[i] = numeros[i + 1];
+       numeros[i + 1] = aux;
+     }
+   }
+ }
+
+
+return 0;
+}
